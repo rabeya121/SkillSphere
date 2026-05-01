@@ -126,13 +126,13 @@ export default function LoginPage() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="off"
                   className="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition text-sm"
                   required
                 />
               </div>
             </div>
 
-            {/* Password */}
             {/* Password */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">

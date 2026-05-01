@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className="bg-[#0B1120] text-gray-300 pt-16 pb-8 px-6 md:px-20">
       <div className="max-w-6xl mx-auto">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-6">
 
           {/* Brand */}
-          <div className="max-w-[300px]">
+          <div className="max-w-full sm:max-w-[300px]">
             <h2 className="text-3xl font-bold text-white mb-4">
               Skill<span className="text-orange-400">Sphere</span>
             </h2>

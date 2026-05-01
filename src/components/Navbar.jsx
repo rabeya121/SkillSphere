@@ -3,11 +3,26 @@
 import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { useSession, signOut } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data: session } = useSession();
+  const user = session?.user;
+  const router = useRouter();
 
-  const user = null;
+  const handleLogout = async () => {
+    await signOut();
+    router.push("/");
+  };
+
+  const getAvatar = (user) => {
+    if (user?.image && user.image.startsWith("http")) {
+      return user.image;
+    }
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "U")}&background=7c3aed&color=fff&size=128`;
+  };
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-purple-100">
@@ -41,11 +56,14 @@ export default function Navbar() {
             {user ? (
               <div className="flex items-center gap-3">
                 <img
-                  src={user.image || "/images/avatar.png"}
+                  src={getAvatar(user)}
                   alt="avatar"
-                  className="w-9 h-9 rounded-full border-2 border-purple-500"
+                  className="w-9 h-9 rounded-full border-2 border-purple-500 object-cover"
                 />
-                <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition text-sm font-medium">
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition text-sm font-medium"
+                >
                   Logout
                 </button>
               </div>
@@ -72,41 +90,27 @@ export default function Navbar() {
             className="md:hidden text-purple-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? (
-              <HiX className="w-6 h-6" />
-            ) : (
-              <HiMenu className="w-6 h-6" />
-            )}
+            {isMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4 flex flex-col gap-3 border-t border-purple-100 pt-3">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 font-medium py-2">
-              Home
-            </Link>
-            <Link href="/main/courses" className="text-gray-700 hover:text-purple-600 font-medium py-2">
-              Courses
-            </Link>
+            <Link href="/" className="text-gray-700 hover:text-purple-600 font-medium py-2">Home</Link>
+            <Link href="/main/courses" className="text-gray-700 hover:text-purple-600 font-medium py-2">Courses</Link>
             {user && (
-              <Link href="/main/profile" className="text-gray-700 hover:text-purple-600 font-medium py-2">
-                My Profile
-              </Link>
+              <Link href="/main/profile" className="text-gray-700 hover:text-purple-600 font-medium py-2">My Profile</Link>
             )}
             <div className="flex flex-col gap-2 mt-2">
               {user ? (
-                <button className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
                   Logout
                 </button>
               ) : (
                 <>
-                  <Link href="/auth/login" className="text-center text-purple-600 border border-purple-600 px-4 py-2 rounded-lg text-sm font-medium">
-                    Login
-                  </Link>
-                  <Link href="/auth/register" className="text-center bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
-                    Register
-                  </Link>
+                  <Link href="/auth/login" className="text-center text-purple-600 border border-purple-600 px-4 py-2 rounded-lg text-sm font-medium">Login</Link>
+                  <Link href="/auth/register" className="text-center bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium">Register</Link>
                 </>
               )}
             </div>

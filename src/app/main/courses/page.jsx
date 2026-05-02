@@ -46,7 +46,7 @@ export default function CoursesPage() {
               placeholder="Search courses by title..."
               value={search}
               onChange={handleSearch}
-              className="w-full px-5 py-3 rounded-xl text-gray-800 outline-none pr-12 text-sm shadow-lg"
+              className="w-full px-5 py-3 rounded-xl text-gray-800 outline-none pr-12 text-sm shadow-lg  placeholder:text-white/50"
             />
             <FiSearch className="absolute right-4 top-3.5 text-gray-400 text-xl" />
           </div>

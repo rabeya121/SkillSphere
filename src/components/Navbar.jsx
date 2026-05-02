@@ -1,16 +1,18 @@
+
 "use client";
 
 import Link from "next/link";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useSession, signOut } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { data: session } = useSession();
   const user = session?.user;
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLogout = async () => {
     await signOut();
@@ -23,6 +25,13 @@ export default function Navbar() {
     }
     return `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "U")}&background=7c3aed&color=fff&size=128`;
   };
+
+  const navLinkClass = (path) =>
+    `font-medium transition ${
+      pathname === path
+        ? "text-purple-600 border-purple-600 pb-1"
+        : "text-gray-700 hover:text-purple-600"
+    }`;
 
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-purple-100">
@@ -38,14 +47,14 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 font-medium transition">
+            <Link href="/" className={navLinkClass("/")}>
               Home
             </Link>
-            <Link href="/main/courses" className="text-gray-700 hover:text-purple-600 font-medium transition">
+            <Link href="/main/courses" className={navLinkClass("/main/courses")}>
               Courses
             </Link>
             {user && (
-              <Link href="/main/profile" className="text-gray-700 hover:text-purple-600 font-medium transition">
+              <Link href="/main/profile" className={navLinkClass("/main/profile")}>
                 My Profile
               </Link>
             )}
@@ -97,10 +106,10 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4 flex flex-col gap-3 border-t border-purple-100 pt-3">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 font-medium py-2">Home</Link>
-            <Link href="/main/courses" className="text-gray-700 hover:text-purple-600 font-medium py-2">Courses</Link>
+            <Link href="/" className={navLinkClass("/")}>Home</Link>
+            <Link href="/main/courses" className={navLinkClass("/main/courses")}>Courses</Link>
             {user && (
-              <Link href="/main/profile" className="text-gray-700 hover:text-purple-600 font-medium py-2">My Profile</Link>
+              <Link href="/main/profile" className={navLinkClass("/main/profile")}>My Profile</Link>
             )}
             <div className="flex flex-col gap-2 mt-2">
               {user ? (

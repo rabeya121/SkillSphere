@@ -33,15 +33,15 @@ A modern online learning platform where users can explore courses, watch lessons
 
 ---
 
-## 📦 NPM Packages Used
 
-| Package | Purpose |
-|---------|---------|
-| `better-auth` | Authentication |
-| `swiper` | Hero slider |
-| `react-hot-toast` | Toast notifications |
-| `react-icons` | Icons |
-| `mongodb` | Database |
+📦 NPM Packages Used:
+
+Package	                Purpose
+better-auth	User authentication (login, register, protected routes)
+swiper	Hero section slider & interactive carousels
+react-hot-toast	Showing success & error notifications
+react-icons	Adding modern and scalable icons
+mongodb	Database for storing user and course data
 
 ---
 
@@ -67,7 +67,7 @@ NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 MONGODB_URI=your_mongodb_uri
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-```
+
 
 ### 4. Run the development server
 ```bash
@@ -83,23 +83,42 @@ Open [http://localhost:3000](http://localhost:3000)
 skillsphere/
 ├── src/
 │   ├── app/
+│   │   ├── api/
+│   │   │   └── auth/
+│   │   │       └── [...all]/
+│   │   │           └── route.js
 │   │   ├── auth/
 │   │   │   ├── login/
+│   │   │   │   └── page.jsx
 │   │   │   └── register/
+│   │   │       └── page.jsx
 │   │   ├── main/
 │   │   │   ├── courses/
+│   │   │   │   ├── page.jsx
 │   │   │   │   └── [id]/
+│   │   │   │       └── page.jsx
 │   │   │   ├── profile/
+│   │   │   │   └── page.jsx
 │   │   │   └── update-profile/
+│   │   │       └── page.jsx
 │   │   ├── layout.js
-│   │   └── page.js
+│   │   ├── page.js
+│   │   └── not-found.jsx
 │   └── components/
 │       ├── Navbar.jsx
 │       ├── Footer.jsx
-│       └── Hero.jsx
+│       ├── Hero.jsx
+│       ├── Stats.jsx
+│       ├── PopularCourses.jsx
+│       ├── LearningTips.jsx
+│       ├── TopInstructors.jsx
+│       └── TrendingCourses.jsx
 ├── lib/
 │   ├── courses.js
 │   ├── auth.js
 │   └── auth-client.js
-└── public/
-└── images/
+├── public/
+│   └── images/
+├── .env
+├── next.config.js
+└── README.md

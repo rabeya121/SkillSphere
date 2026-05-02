@@ -48,8 +48,8 @@ export default function ProfilePage() {
       <div className="max-w-2xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-purple-800 flex items-center justify-center gap-2">
+        <div className="text-center mb-4">
+          <h1 className="text-3xl font-bold text-purple-800 flex items-center justify-center gap-1">
             <MdOutlineSchool className="text-purple-600" /> My Profile
           </h1>
           <p className="text-gray-500 mt-2">Manage your account information</p>
@@ -66,7 +66,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Avatar */}
+          {/* Avatar set */}
           <div className="flex justify-center -mt-12 mb-4">
             <div className="relative">
               <img
@@ -78,7 +78,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Info */}
+          {/* Student Info */}
           <div className="px-8 pb-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-1">{user.name}</h2>
             <span className="inline-block bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full mb-6">

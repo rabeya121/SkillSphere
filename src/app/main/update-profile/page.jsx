@@ -85,7 +85,7 @@ export default function UpdateProfilePage() {
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
 
-          {/* Avatar Preview */}
+          {/* Avatar image */}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <img
@@ -102,8 +102,6 @@ export default function UpdateProfilePage() {
 
           {/* Form */}
           <div className="flex flex-col gap-5">
-
-            {/* Name */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
                 Full Name

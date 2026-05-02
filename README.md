@@ -3,7 +3,7 @@
 A modern online learning platform where users can explore courses, watch lessons, and enroll in skill-based programs like Web Development, Design, Marketing, and more.
 
 ## 🌐 Live URL
-
+[SkillSphere Live](https://skill-sphere-brown.vercel.app)
 
 ---
 
@@ -26,13 +26,12 @@ A modern online learning platform where users can explore courses, watch lessons
 ## 🛠️ Tech Stack
 
 - **Framework** — Next.js (App Router)
-- **Styling** — Tailwind CSS,heroUi
+- **Styling** — Tailwind CSS, HeroUI
 - **Authentication** — BetterAuth
 - **Database** — MongoDB Atlas
 - **Icons** — React Icons
 
 ---
-
 
 ## 📦 NPM Packages Used
 
@@ -44,13 +43,14 @@ A modern online learning platform where users can explore courses, watch lessons
 | `react-icons` | Icons |
 | `mongodb` | Database |
 | `@heroui/react` | UI Components |
+
 ---
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/skillsphere.git
+git clone https://github.com/rabeya121/SkillSphere.git
 cd skillsphere
 ```
 
@@ -68,7 +68,7 @@ NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
 MONGODB_URI=your_mongodb_uri
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
-
+```
 
 ### 4. Run the development server
 ```bash
@@ -78,7 +78,6 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000)
 
 ---
-
 
 ## 📁 Project Structure
 skillsphere/
@@ -123,3 +122,8 @@ skillsphere/
 ├── .env
 ├── next.config.js
 └── README.md
+
+---
+
+## 👩‍💻 Developer
+Rabeya Khatun b-13

@@ -36,7 +36,7 @@ const HeroSlider = () => {
     <section>
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 1500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
         loop={true}

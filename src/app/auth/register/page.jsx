@@ -301,9 +301,9 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        {/* Card */}
+        {/* Card start */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
-          {/* Google Button */}
+          {/* Google Button color */}
           <button
             onClick={handleGoogleLogin}
             className="w-full flex items-center justify-center gap-3 border-2 border-gray-200 hover:border-purple-400 text-gray-700 font-semibold py-3 rounded-xl transition mb-6"
@@ -338,8 +338,9 @@ export default function RegisterPage() {
             <div className="flex-1 h-px bg-gray-200"></div>
           </div>
 
-          {/* Form */}
+          {/* Form suru */}
           <div className="flex flex-col gap-4">
+
             {/* Name */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
@@ -378,7 +379,7 @@ export default function RegisterPage() {
               </div>
             </div>
 
-            {/* Photo URL with Preview */}
+    
             {/* Photo URL */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
@@ -401,7 +402,7 @@ export default function RegisterPage() {
               </p>
             </div>
 
-            {/* Password with Show/Hide */}
+            {/* Password */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
                 Password

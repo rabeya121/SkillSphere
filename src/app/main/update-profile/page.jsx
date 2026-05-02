@@ -82,7 +82,7 @@ export default function UpdateProfilePage() {
           <p className="text-gray-500 text-sm mt-1">Update your name and photo</p>
         </div>
 
-        {/* Card */}
+        {/* Card  start*/}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
 
           {/* Avatar image */}
@@ -100,7 +100,7 @@ export default function UpdateProfilePage() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Form  start*/}
           <div className="flex flex-col gap-5">
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">

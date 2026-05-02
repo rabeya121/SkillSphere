@@ -1,6 +1,4 @@
 
-
-
 "use client";
 
 import { useSession } from "@/lib/auth-client";
@@ -53,7 +51,7 @@ export default function CourseDetailsPage({ params }) {
   return (
     <main className="min-h-screen bg-[#f5f3ff]">
 
-      {/* Hero */}
+      {/* Hero start*/}
       <section className="bg-gradient-to-br from-[#4c1d95] via-[#6d28d9] to-[#7c3aed] text-white py-16 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white"></div>
@@ -107,7 +105,6 @@ export default function CourseDetailsPage({ params }) {
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          {/* Curriculum */}
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-purple-800 mb-6 flex items-center gap-2">
               <FaTrophy className="text-yellow-500" /> Course Curriculum
@@ -179,7 +176,7 @@ export default function CourseDetailsPage({ params }) {
         </div>
       </section>
 
-      {/* Back Button */}
+      {/* Back course */}
       <div className="text-center pb-16">
         <Link
           href="/main/courses"

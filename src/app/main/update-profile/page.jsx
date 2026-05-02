@@ -80,7 +80,7 @@ export default function UpdateProfilePage() {
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
 
-          {/* Avatar Preview */}
+          {/*Avatar*/}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <img

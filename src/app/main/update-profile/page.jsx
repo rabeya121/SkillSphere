@@ -1,7 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
-import { useSession } from "@/lib/auth-client";
+import { useSession, updateUser } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaUser, FaImage, FaArrowLeft } from "react-icons/fa";
@@ -29,21 +30,15 @@ export default function UpdateProfilePage() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/auth/update-user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name || user?.name,
-          image: image || user?.image,
-        }),
+      await updateUser({
+        name: name || user?.name,
+        image: image || user?.image,
       });
-
-      if (response.ok) {
-        toast.success("Profile updated successfully!");
+      toast.success("Profile updated successfully!");
+      setTimeout(() => {
         router.push("/main/profile");
-      } else {
-        toast.error("Update failed!");
-      }
+        router.refresh();
+      }, 1000);
     } catch (error) {
       toast.error("Something went wrong!");
     } finally {
@@ -82,10 +77,10 @@ export default function UpdateProfilePage() {
           <p className="text-gray-500 text-sm mt-1">Update your name and photo</p>
         </div>
 
-        {/* Card  start*/}
+        {/* Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
 
-          {/* Avatar image */}
+          {/* Avatar Preview */}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <img
@@ -100,8 +95,10 @@ export default function UpdateProfilePage() {
             </div>
           </div>
 
-          {/* Form  start*/}
+          {/* Form */}
           <div className="flex flex-col gap-5">
+
+            {/* Name */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
                 Full Name

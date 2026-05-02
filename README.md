@@ -26,7 +26,7 @@ A modern online learning platform where users can explore courses, watch lessons
 ## 🛠️ Tech Stack
 
 - **Framework** — Next.js (App Router)
-- **Styling** — Tailwind CSS
+- **Styling** — Tailwind CSS,heroUi
 - **Authentication** — BetterAuth
 - **Database** — MongoDB Atlas
 - **Icons** — React Icons
@@ -34,15 +34,16 @@ A modern online learning platform where users can explore courses, watch lessons
 ---
 
 
-📦 NPM Packages Used:
+## 📦 NPM Packages Used
 
-Package	                Purpose
-better-auth	User authentication (login, register, protected routes)
-swiper	Hero section slider & interactive carousels
-react-hot-toast	Showing success & error notifications
-react-icons	Adding modern and scalable icons
-mongodb	Database for storing user and course data
-
+| Package | Purpose |
+|---------|---------|
+| `better-auth` | Authentication |
+| `swiper` | Hero slider |
+| `react-hot-toast` | Toast notifications |
+| `react-icons` | Icons |
+| `mongodb` | Database |
+| `@heroui/react` | UI Components |
 ---
 
 ## 🚀 Getting Started

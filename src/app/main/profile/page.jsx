@@ -27,7 +27,7 @@ export default function ProfilePage() {
     if (user?.image && user.image.startsWith("http")) {
       return user.image;
     }
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "U")}&background=7c3aed&color=fff&size=128`;
+    return "/images/user.png";
   };
 
   if (isPending) {
@@ -46,7 +46,6 @@ export default function ProfilePage() {
   return (
     <main className="min-h-screen bg-[#f5f3ff] py-16 px-6">
       <div className="max-w-2xl mx-auto">
-
         {/* Header */}
         <div className="text-center mb-4">
           <h1 className="text-3xl font-bold text-purple-800 flex items-center justify-center gap-1">
@@ -57,7 +56,6 @@ export default function ProfilePage() {
 
         {/* Profile Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 overflow-hidden">
-
           {/* Cover */}
           <div className="bg-gradient-to-br from-[#4c1d95] via-[#6d28d9] to-[#7c3aed] h-32 relative">
             <div className="absolute inset-0 opacity-10">
@@ -80,7 +78,9 @@ export default function ProfilePage() {
 
           {/* Student Info */}
           <div className="px-8 pb-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-1">{user.name}</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-1">
+              {user.name}
+            </h2>
             <span className="inline-block bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full mb-6">
               Student
             </span>

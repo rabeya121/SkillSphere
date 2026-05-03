@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -22,7 +21,7 @@ export default function UpdateProfilePage() {
   const getAvatar = () => {
     const imgUrl = image || user?.image;
     if (imgUrl && imgUrl.startsWith("http")) return imgUrl;
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name || user?.name || "U")}&background=7c3aed&color=fff&size=128`;
+    return "/images/user.png";
   };
 
   const handleUpdate = async (e) => {
@@ -64,7 +63,6 @@ export default function UpdateProfilePage() {
       <Toaster position="top-center" />
 
       <div className="max-w-md mx-auto">
-
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-4">
@@ -74,12 +72,13 @@ export default function UpdateProfilePage() {
             </span>
           </Link>
           <h2 className="text-2xl font-bold text-gray-800">Update Profile</h2>
-          <p className="text-gray-500 text-sm mt-1">Update your name and photo</p>
+          <p className="text-gray-500 text-sm mt-1">
+            Update your name and photo
+          </p>
         </div>
 
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-purple-100 p-8">
-
           {/*Avatar*/}
           <div className="flex justify-center mb-6">
             <div className="relative">
@@ -97,7 +96,6 @@ export default function UpdateProfilePage() {
 
           {/* Form */}
           <div className="flex flex-col gap-5">
-
             {/* Name */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-1 block">
@@ -153,7 +151,6 @@ export default function UpdateProfilePage() {
             >
               <FaArrowLeft /> Back to Profile
             </Link>
-
           </div>
         </div>
       </div>

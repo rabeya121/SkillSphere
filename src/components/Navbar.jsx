@@ -22,7 +22,7 @@ export default function Navbar() {
     if (user?.image && user.image.startsWith("http")) {
       return user.image;
     }
-    return `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "U")}&background=7c3aed&color=fff&size=128`;
+    return "/images/user.png";
   };
 
   const navLinkClass = (path) =>
